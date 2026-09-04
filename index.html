@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pedro Francisco Gil</title>
+<meta name="description" content="Pedro Francisco Gil — stellarator optimization at the Max Planck Institute for Plasma Physics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#000000;
+    --ink:#E8E4DC;
+    --muted:#8C877C;
+    --rule:#23211D;
+    --accent:#D9B26F;
+    --serif:"Spectral", Georgia, "Times New Roman", serif;
+    --sans:"IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--serif);
+    font-weight:300;
+    font-size:18px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:1px}
+  a:hover{color:var(--accent)}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+  .page{
+    max-width:1080px;
+    margin:0 auto;
+    padding:72px 32px 110px;
+    display:grid;
+    grid-template-columns:250px 1fr;
+    gap:72px;
+    align-items:start;
+  }
+
+  /* ---------- sidebar ---------- */
+  .side{position:sticky;top:72px}
+
+  .portrait{
+    width:100%;
+    aspect-ratio:4/5;
+    object-fit:cover;
+    display:block;
+    border:1px solid var(--rule);
+  }
+
+  .name{
+    font-size:1.55rem;
+    font-weight:400;
+    line-height:1.2;
+    margin:26px 0 4px;
+    letter-spacing:-0.01em;
+  }
+  .role{
+    font-family:var(--sans);
+    font-size:0.82rem;
+    color:var(--muted);
+    line-height:1.5;
+    margin:0 0 26px;
+  }
+
+  .side nav{border-top:1px solid var(--rule);padding-top:16px;margin-bottom:26px}
+  .side nav a{
+    display:block;
+    font-family:var(--sans);
+    font-size:0.9rem;
+    padding:5px 0;
+    border-bottom:none;
+    color:var(--muted);
+  }
+  .side nav a:hover{color:var(--ink)}
+  .side nav a[aria-current]{color:var(--ink);border-left:2px solid var(--accent);padding-left:10px;margin-left:-12px}
+
+  .contact{
+    font-family:var(--sans);
+    font-size:0.85rem;
+    line-height:2;
+    border-top:1px solid var(--rule);
+    padding-top:16px;
+  }
+  .contact a{border-bottom:none;color:var(--muted)}
+  .contact a:hover{color:var(--accent)}
+
+  /* ---------- main ---------- */
+  main{max-width:62ch}
+  section{padding-bottom:70px}
+  section + section{border-top:1px solid var(--rule);padding-top:48px}
+
+  h2{
+    font-family:var(--sans);
+    font-weight:500;
+    font-size:0.85rem;
+    color:var(--accent);
+    margin:0 0 22px;
+  }
+  p{margin:0 0 1.1em}
+  .lead{font-size:1.22rem;line-height:1.55}
+
+  h3{font-weight:400;font-size:1.1rem;margin:32px 0 10px}
+
+  ul{margin:0 0 1.2em;padding-left:1.1em}
+  li{margin-bottom:0.35em}
+
+  /* publications: year in the gutter */
+  .pubs{list-style:none;margin:0;padding:0}
+  .pubs li{
+    display:grid;
+    grid-template-columns:58px 1fr;
+    gap:16px;
+    padding:16px 0;
+    border-bottom:1px solid var(--rule);
+    margin:0;
+  }
+  .year{font-family:var(--sans);font-size:0.82rem;color:var(--muted);padding-top:5px}
+  .pubs .title{display:block}
+  span.title{color:var(--ink)}
+  .venue{display:block;font-style:italic;color:var(--muted);font-size:0.95rem}
+
+  footer{
+    font-family:var(--sans);
+    font-size:0.78rem;
+    color:var(--muted);
+    border-top:1px solid var(--rule);
+    padding-top:18px;
+  }
+
+  @media (max-width:820px){
+    .page{grid-template-columns:1fr;gap:40px;padding:40px 24px 70px}
+    .side{position:static;display:grid;grid-template-columns:130px 1fr;gap:24px;align-items:end}
+    .portrait{aspect-ratio:1/1}
+    .side .meta{grid-column:1/-1}
+    .name{margin-top:0}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <aside class="side">
+    <img class="portrait" src="photo_cv.jpeg" alt="Portrait of Pedro Francisco Gil"
+         onerror="this.style.display='none'">
+    <div class="meta">
+      <h1 class="name">Pedro Francisco Gil</h1>
+      <p class="role">PhD Graduate <br>Max-Planck-Institute for Plasma Physics</p>
+
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+      </nav>
+
+      <div class="contact">
+        <a href="mailto:pedro.gil@ipp.mpg.de">pedro.gil@ipp.mpg.de</a><br>
+        <a href="https://github.com/PedroFranciscoGil">GitHub</a><br>
+        <a href="https://www.linkedin.com/in/pedro-gil-8bb635174/">LinkedIn</a><br>
+        <a href="https://scholar.google.com/citations?user=V4h_yXkAAAAJ&amp;hl=en-EN#">Google Scholar</a>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+
+    <section id="home">
+      <h2>Home</h2>
+      <p class="lead">I currently work on stellarator optimization at Max-Planck-Institute for Plasma Physics, where I study how to improve the optimization of stellarator coils and plasma topology.</p>
+      <p>I completed my PhD at Ludwig Maximilian University Munich under the supervision of <a href="https://www.ipp.mpg.de/1084808/zohm">Prof. Dr. Hartmut Zohm</a>, where I studied how to design a stellarator to confine electrons and positrons and advance fusion reactors. My research interests include nonlinear optimization, and the application of artificial intelligence and machine learning to complex optimization problems.
+</p>
+      <h3>Education</h3>
+      <ul>
+        <li>PhD in Stellarator Optimization, Ludwig Maximilian University of Munich, Munich, Germany, 2026</li>
+        <li>MSc in Physics and Nanotechnology, DTU, Danmarks Tekniske Universitet, Lyngby, Denmark, 2022</li>
+        <li>MSc, Grande Ecole Program, ENSTA Paris, Institut Polytechnique de Paris, Paris, France, 2021</li>
+        <li>Preparatory Classes, Lycée du Parc, Lyon, France, 2018</li>
+      </ul>
+    </section>
+
+    <section id="research">
+      <h2>Research</h2>
+      <p>My work translates physical problems into tractable optimization frameworks. I focus on reformulating ill-posed problems and navigating highly non-convex optimization landscapes.  </p>
+
+      <h3>Current main topic</h3>
+      <p>Coil optimization for stellarators is non-trivial as there can be an infinite amount of coil shapes that reproduce the target magnetic field. Recent <a href="https://journals.aps.org/prl/abstract/10.1103/n7gk-922h">work</a> where we applied an augmented Lagrangian formulation to the electromagnetic coil problem resulted in Pareto-optimized fusion configurations.</p>
+
+      <h3>Other topics</h3>
+      <p>Working on automation of stellarator coil design via an AI-driven <a href="https://arxiv.org/abs/2603.15240">framework</a> that selects optimization strategies to find the best performing fusion reactor candidates.</p>
+
+      <h3>Interests</h3>
+      <ul>
+        <li>Nonlinear and constrained optimization</li>
+        <li>Convex optimization and duality</li>
+        <li>Numerical linear algebra and large-scale solvers</li>
+        <li>Stochastic and robust optimization under uncertainty</li>
+        <li>Machine learning and AI for scientific design problems</li>
+        <li>Stellarator and fusion magnet design</li>
+      </ul>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+      <ul class="pubs">
+        <li>
+          <span class="year">2026</span>
+          <span>
+            <a class="title" href="https://journals.aps.org/prl/abstract/10.1103/n7gk-922h">Stellarator coils for future fusion reactors via an augmented Lagrangian approach</a>
+            <span class="venue">P. F. Gil, W. Li, J. Stratton, A. A. Kaptanoglu, E. V. Stenson — Physical Review Letters 137, 065101</span>
+          </span>
+        </li>
+        <li>
+          <span class="year">2026</span>
+          <span>
+            <a class="title" href="https://journals.aps.org/pre/abstract/10.1103/838f-vbq3">Efficient computation of stellarator coils with an augmented Lagrangian optimization method</a>
+            <span class="venue">P. F. Gil, W. Li, J. Stratton, A. A. Kaptanoglu, E. V. Stenson — Physical Review E</span>
+          </span>
+        </li>
+        <li>
+          <span class="year">2026</span>
+          <span>
+            <a class="title" href="https://arxiv.org/abs/2603.11737">Designing a buildable optimized stellarator to confine electron-positron plasmas</a>
+            <span class="venue">P. F. Gil, J. Smoniewski, P. Huslage, R. Jorge, T. Thun, E. Buglione-Ceresa, T. Schuler, S. Fingl, G.-H. Ducas, E. V. Stenson — arXiv:2603.11737</span>
+          </span>
+        </li>
+        <li>
+          <span class="year">2026</span>
+          <span>
+            <a class="title" href="https://arxiv.org/abs/2603.15240">A proof-of-concept for automated AI-driven stellarator coil optimization with in-the-loop finite-element calculations</a>
+            <span class="venue">A. A. Kaptanoglu, P. F. Gil — arXiv:2603.15240</span>
+          </span>
+        </li>
+        <li>
+          <span class="year">2026</span>
+          <span>
+            <a class="title" href="https://arxiv.org/abs/2603.11699">Stochastic single-stage stellarator optimization using fixed-boundary equilibria</a>
+            <span class="venue">P. F. Gil, J. Smoniewski, R. Jorge, P. Huslage, E. V. Stenson — arXiv:2603.11699</span>
+          </span>
+        </li>
+        <li>
+          <span class="year">2025</span>
+          <span>
+            <span class="title">A non-planar ReBCO test coil with 3D-printed aluminum support structure for the EPOS stellarator</span>
+            <span class="venue">P. Huslage, T. Schuler, P. F. Gil, V. Brack, D. Schmeling, D. A. R. Orona, E. von Schoenberg, T. Thun, J. Smoniewski, E. V. Stenson — IEEE Transactions on Applied Superconductivity 36(3), 1–5</span>
+          </span>
+        </li>
+        <li>
+          <span class="year">2025</span>
+          <span>
+            <a class="title" href="https://arxiv.org/abs/2507.22516">Manufacturing tolerances of non-planar coils for an optimized tabletop stellarator</a>
+            <span class="venue">P. F. Gil, V. Brack, T. Schuler, P. Huslage, J. Smoniewski, E. V. Stenson — IEEE Transactions on Applied Superconductivity 36(3), 1–5</span>
+          </span>
+        </li>
+        <li>
+          <span class="year">2025</span>
+          <span>
+            <a class="title" href="https://doi.org/10.1017/S0022377825000224">Strain optimisation for ReBCO high-temperature superconducting stellarator coils in SIMSOPT</a>
+            <span class="venue">P. Huslage, E. J. Paul, M. Haque, P. F. Gil, N. Foppiani, J. Smoniewski, E. V. Stenson — Journal of Plasma Physics 91(2), E71</span>
+          </span>
+        </li>
+      </ul>
+    </section>
+
+    <footer>© 2026 Pedro Francisco Gil</footer>
+
+  </main>
+</div>
+
+<script>
+  // Mark the nav link for whichever section is currently in view.
+  const links = [...document.querySelectorAll('.side nav a')];
+  const map = Object.fromEntries(links.map(a => [a.hash.slice(1), a]));
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(a => a.removeAttribute('aria-current'));
+        map[e.target.id]?.setAttribute('aria-current', 'true');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  document.querySelectorAll('section').forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
